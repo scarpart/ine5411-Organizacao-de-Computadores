@@ -4,7 +4,7 @@
 	cm:	.space	9 
 .text
 
-# Translating the C code written in matrixMultiplication.c
+# Translating the C code written in 2-matrixMultiplication.c
 
 	main:
 	li 	$s0, 0		# int i = 0;
