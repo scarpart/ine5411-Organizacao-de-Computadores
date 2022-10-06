@@ -2,39 +2,26 @@
 	main:
 	li	$v0, 5		# lendo um inteiro
 	syscall
-	move 	$t0, $v0	# move o inteiro para s0
+	move 	$a0, $v0	# move o inteiro para s0
 	
 	li	$v0, 5		# le o outro coeficiente
 	syscall
-	move 	$t1, $v0	# move o inteiro para s1
+	move 	$a1, $v0	# move o inteiro para s1
 	
-	div	$s0, $t1, $t0	# x = (-b) /a
+	jal 	funcao
+	j	main
 	
-	not	$s0, $s0	# inverte s1 
-	addi	$s0, $s0, 1	# complemento de 2
+funcao:
+	div	$t0, $a1, $a0	# x = (-b) /a
 	
-	add 	$a0, $zero, $s0	# carregando o resultado para a0
+	not	$t0, $t0	# inverte s1 
+	addi	$t0, $t0, 1	# complemento de 2
+	
+	add 	$a0, $zero, $t0	# carregando o resultado para a0
 	li	$v0, 1		# comando para imprimir int
 	syscall
 	
+	jr	$ra
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	 
