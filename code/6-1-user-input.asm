@@ -1,3 +1,5 @@
+.data
+	newline: .asciiz "\n"
 .text
 	main:
 	li	$v0, 5		# lendo um inteiro
@@ -21,6 +23,10 @@ funcao:
 	li	$v0, 1		# comando para imprimir int
 	syscall
 	
+	li	$v0, 4		# comando para escrever string
+	la	$a0, newline	# carrega o newline em a0
+	syscall
+		
 	jr	$ra
 	
 	
