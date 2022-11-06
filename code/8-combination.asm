@@ -83,6 +83,7 @@ loop_factorial:
 	# popping the stack
 	lw	$a0, 4($sp)		# loading a0 back
 	lw	$ra, 0($sp)		# loading instruction address
+	addi	$sp, $sp, 8		# popping the stack back to the original position of sp
 	jr	$ra			# jumps back to main, ends routine
 	
 	# end of routine
